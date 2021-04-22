@@ -38,4 +38,12 @@ D(6) = 8 + 2 = 10
 
 ## (f) [12 points] Give a polynomial-time algorithm that, given G, w, s, t, u, v, and a sequence of positive real numbers q1, . . . , qk, computes the values D(q1), . . . , D(qk). Justify the correctness of your algorithm and analyse its worst-case running time.For full credit, your algorithm should run in time O((|V|+|E|) log|V|+k).
 
-*Haven't completed this one yet, but feel it has something to do with divide and conquer and finding the value of q that splits between paths that use the new edge and ones that don't.*
+Due to the suggested order we clearly need dikestras:
+
+A basic process would be something along the lines of performing dikestras from S and seperately from V (the node reached 2nd of the 2 which the arc is added betweem) while excluding the added arc.
+
+Then this arc can be added.
+
+Then for each q value we set d(V) to the smallest of d(V) in the original graph and d(U) + q.
+
+And so then we set D(q) to the smallest of d(t) in the original or d(v) in this graph + shortest distance from v to t in the original
